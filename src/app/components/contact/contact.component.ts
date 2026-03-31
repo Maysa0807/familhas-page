@@ -12,7 +12,7 @@ export class ContactComponent {
 
   /** Mensagem já preenchida ao abrir o chat (o cliente pode editar antes de enviar). */
   readonly whatsappPrefillMessage =
-    'Olá, venho através do site e tenho interesse em fazer uma cotação.';
+    'Olá! Vim pelo site da Familhas e gostaria de começar a planejar minha viagem!';
 
   get whatsappHref(): string {
     return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(this.whatsappPrefillMessage)}`;
