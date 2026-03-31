@@ -1,0 +1,78 @@
+$hero-overlay: linear-gradient(rgba(20, 10, 43, 0.62), rgba(9, 7, 15, 0.62));
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  animation: heroSlideshow 24s ease-in-out infinite;
+}
+
+.hero-bg-nordeste-1 {
+  background-image:
+    $hero-overlay,
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80");
+  animation-delay: 0s;
+}
+
+.hero-bg-nordeste-2 {
+  background-image:
+    $hero-overlay,
+    url("https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1600&q=80");
+  animation-delay: 8s;
+}
+
+.hero-bg-nordeste-3 {
+  background-image:
+    $hero-overlay,
+    url("https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1600&q=80");
+  animation-delay: 16s;
+}
+
+@keyframes heroSlideshow {
+  0%,
+  28% {
+    opacity: 1;
+  }
+
+  36%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.hero-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+.hero-section .lead {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-layer {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hero-bg-nordeste-2,
+  .hero-bg-nordeste-3 {
+    opacity: 0;
+  }
+}

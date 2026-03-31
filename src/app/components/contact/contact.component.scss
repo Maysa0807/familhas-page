@@ -1,0 +1,81 @@
+.contact-section .btn-whatsapp {
+  background-color: #25d366;
+  border-color: #25d366;
+  color: #ffffff;
+}
+
+.contact-section .btn-whatsapp:hover,
+.contact-section .btn-whatsapp:focus {
+  background-color: #20bd5a;
+  border-color: #20bd5a;
+  color: #ffffff;
+}
+
+.contact-section .btn-whatsapp:active {
+  background-color: #1da851;
+  border-color: #1da851;
+  color: #ffffff;
+}
+
+.contact-section {
+  position: relative;
+  background-image: linear-gradient(rgba(20, 10, 43, 0.86), rgba(9, 7, 15, 0.86)),
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-section .card {
+  color: var(--brand-black);
+  background-color: var(--card-surface-soft);
+  --bs-card-bg: var(--card-surface-soft);
+}
+
+.contact-section .card a {
+  color: var(--brand-primary);
+  text-decoration: none;
+}
+
+.contact-section .contact-channels-card {
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-section .contact-channels-card:hover {
+  background-color: #1c1c1c;
+  --bs-card-bg: #1c1c1c;
+  color: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.45);
+}
+
+.contact-section .contact-channels-card:hover .card-body h3,
+.contact-section .contact-channels-card:hover .card-body li {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.contact-section .contact-channels-card:hover .card-body a {
+  color: var(--brand-kicker);
+}
+
+.contact-section .contact-channels-card:hover .card-body a:hover {
+  color: #ffffff;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: #25d366;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  font-size: 1.8rem;
+}

@@ -1,0 +1,34 @@
+<section id="depoimentos" class="section-padding testimonials-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-kicker mb-2">Depoimentos</p>
+      <h2 class="section-title mb-0">Leia o que nossos clientes dizem</h2>
+    </div>
+
+    <div class="text-center mb-4" *ngIf="loading">
+      <p class="testimonials-status mb-0">Carregando depoimentos...</p>
+    </div>
+
+    <div class="text-center mb-4" *ngIf="!loading && loadError">
+      <p class="testimonials-status mb-0">
+        Nao foi possivel buscar os depoimentos em tempo real. Exibindo destaques recentes.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-6" *ngFor="let item of testimonials | slice: 0:6">
+        <article class="testimonial-card h-100">
+          <p class="testimonial-text mb-3">{{ item.text }}</p>
+          <h3 class="h6 mb-1">{{ item.author }}</h3>
+          <p class="testimonial-role mb-0">{{ item.role }}</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a class="btn btn-brand btn-lg" [href]="feedbackFormUrl" target="_blank" rel="noopener">
+        Ja viajou com a Familhas? Deixe sua opiniao ✈️
+      </a>
+    </div>
+  </div>
+</section>

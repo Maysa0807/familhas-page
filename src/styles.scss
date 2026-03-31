@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Equivale ao $purple-800 do Bootstrap (mix 60% preto em #6f42c1) */
+  --purple-800: #2c1a4d;
+  --brand-primary: #5a28c9;
+  --brand-kicker: #c9b8f5;
+  --brand-primary-hover: #441d98;
+  --brand-dark: #140a2b;
+  --brand-black: #09070f;
+  --brand-white: #ffffff;
+  --page-text: rgba(255, 255, 255, 0.92);
+  --page-text-muted: rgba(255, 255, 255, 0.75);
+  --card-surface-soft: #e8e6ee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--page-text);
+  background-color: #000000;
+  background-image: linear-gradient(
+    165deg,
+    #000000 0%,
+    var(--purple-800) 38%,
+    #000000 72%,
+    var(--purple-800) 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+p {
+  color: var(--page-text-muted);
+}
+
+.hero-section p,
+.contact-section p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-section .text-uppercase.small {
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.12em;
+}
+
+.card,
+.card-body,
+.card .card-title {
+  color: var(--brand-black);
+}
+
+.card p {
+  color: #495057;
+}
+
+.section-band {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(44, 26, 77, 0.35) 50%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  border-block: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.section-padding {
+  padding: 5rem 0;
+}
+
+.section-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--brand-kicker);
+  font-weight: 600;
+}
+
+.section-title {
+  font-weight: 400;
+  color: var(--brand-white);
+}
+
+.btn-brand {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: var(--brand-white);
+}
+
+.btn-brand:hover {
+  background-color: var(--brand-primary-hover);
+  border-color: var(--brand-primary-hover);
+  color: var(--brand-white);
+}
+
+.navbar,
+.card,
+.btn,
+.nav-link,
+p,
+a,
+li,
+span {
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 991.98px) {
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+}

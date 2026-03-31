@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+
+.site-navbar {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.92) 0%, rgba(44, 26, 77, 0.55) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  font-size: 24px;
+}
+
+.brand-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-brand span {
+  color: var(--brand-white);
+  letter-spacing: 0.04em;
+}
+
+.site-navbar .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.site-navbar .navbar-nav .nav-link:hover,
+.site-navbar .navbar-nav .nav-link:focus {
+  color: #ffffff;
+}
