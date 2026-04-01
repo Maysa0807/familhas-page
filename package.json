@@ -5,6 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy:sync": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/sync-build-to-public-html.ps1",
+    "deploy:git": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/publish-deploy-branch.ps1",
+    "deploy": "npm run deploy:sync && npm run deploy:git",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
