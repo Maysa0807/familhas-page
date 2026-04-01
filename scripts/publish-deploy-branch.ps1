@@ -48,8 +48,9 @@ if (git ls-files) {
 Invoke-Git @('checkout', 'main', '--', 'public_html')
 Invoke-Git @('restore', '--staged', 'public_html')
 
-Move-Item -Path (Join-Path $root 'public_html\*') -Destination $root -Force
-Remove-Item -Path (Join-Path $root 'public_html') -Recurse -Force
+$publicHtmlDir = Join-Path $root 'public_html'
+Get-ChildItem -Path $publicHtmlDir -Force | Move-Item -Destination $root -Force
+Remove-Item -Path $publicHtmlDir -Recurse -Force
 
 $toAdd = @('.htaccess', 'index.html', 'favicon.ico', 'assets', 'media')
 foreach ($p in $toAdd) {
@@ -66,10 +67,17 @@ Get-ChildItem -Path $root -File | Where-Object {
 $toCommit = git diff --cached --name-only
 if (-not $toCommit) {
   Invoke-Git @('checkout', 'main')
-  throw 'Nada foi preparado para commit na deploy. Verifique o build e public_html.'
+  throw 'Nada foi preparado para commit na deploy (git add nao estagou arquivos). Verifique public_html e o Move-Item.'
 }
 
-Invoke-Git @('commit', '-m', 'deploy: atualiza build')
+git diff --cached HEAD --quiet
+$nothingChangedVsHead = ($LASTEXITCODE -eq 0)
+if ($nothingChangedVsHead) {
+  Write-Host '>> Bundle igual ao ultimo commit na deploy; commit vazio para disparar pull na hosting.' -ForegroundColor Yellow
+  Invoke-Git @('commit', '--allow-empty', '-m', 'chore: redeploy (bundle inalterado; forcar hosting)')
+} else {
+  Invoke-Git @('commit', '-m', 'deploy: atualiza build')
+}
 Invoke-Git @('push', 'origin', 'deploy')
 Invoke-Git @('checkout', 'main')
 
