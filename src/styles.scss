@@ -31,6 +31,8 @@ body {
   );
   background-attachment: fixed;
   min-height: 100vh;
+  /* Compensa a navbar fixa no topo. */
+  padding-top: 76px;
 }
 
 p {
