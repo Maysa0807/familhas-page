@@ -1,4 +1,5 @@
 # FamilhasPage
+<img width="1901" height="900" alt="image" src="https://github.com/user-attachments/assets/c43aeac6-f595-4033-8216-c6f3af978346" />
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
 
